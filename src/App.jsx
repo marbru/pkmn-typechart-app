@@ -448,7 +448,11 @@ const TYPEDATA = {
 
 function TypeButton({ type, onClick }) {
   return (
-    <button key={type} style={{ display: "inline-flex", alignItems: 'center', margin: '0.25rem' }}>
+    <button
+      key={type}
+      style={{ display: "inline-flex", alignItems: 'center', margin: '0.25rem' }}
+      onClick={() => onClick(type)}
+    >
       <img
         src={`/assets/types/${type}.svg`}
         alt={type}
@@ -461,11 +465,11 @@ function TypeButton({ type, onClick }) {
 
 
 
-function TypeSelector() {
+function TypeSelector({ onTargetTypeChange }) {
   return (
     <div>
       {Object.keys(TYPEDATA).map((type) => (
-        <TypeButton key={type} type={type} />
+        <TypeButton key={type} type={type} onClick={onTargetTypeChange} />
       ))}
     </div>
   )
@@ -501,7 +505,19 @@ function DamageRow({ types, label }) {
       {types.map((type) => <TypeTag key={type} name={type} />)}
     </>
   )
+}
 
+function BigTypeBadge({ type }) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <img
+        src={`/assets/types/${type}.svg`}
+        alt={type}
+        style={{ width: 100, height: 100, margin: 8 }}
+      />
+      <h2>{type.charAt(0).toUpperCase() + type.slice(1)} Type</h2>
+    </div>
+  )
 }
 
 function calculateDamageModifiers(targetType) {
@@ -544,35 +560,44 @@ function calculateDamageModifiers(targetType) {
 }
 
 function TypeInfo({ targetType }) {
+  if (!targetType) {
+    return null;
+  }
+
   const damageModifiers = calculateDamageModifiers(targetType);
 
   return (
-    <div style={{ display: 'flex', gap: '2rem' }}>
-      <div>
-        <h2>⚔️ Attacking</h2>
-        <DamageRow label={"Double damage against"} types={damageModifiers.att_double} />
-        <DamageRow label={"Half damage against"} types={damageModifiers.att_half} />
-        <DamageRow label={"No damage against"} types={damageModifiers.att_null} />
+    <>
+      <BigTypeBadge type={targetType} />
+      <div style={{ display: 'flex', gap: '2rem' }}>
+        <div>
+          <h2>⚔️ Attacking</h2>
+          <DamageRow label={"Double damage against"} types={damageModifiers.att_double} />
+          <DamageRow label={"Half damage against"} types={damageModifiers.att_half} />
+          <DamageRow label={"No damage against"} types={damageModifiers.att_null} />
 
+        </div>
+        <div>
+          <h2>🛡️ Defending</h2>
+          <DamageRow label={"Double damage from"} types={damageModifiers.def_double} />
+          <DamageRow label={"Half damage from"} types={damageModifiers.def_half} />
+          <DamageRow label={"No damage from"} types={damageModifiers.def_null} />
+        </div>
       </div>
-      <div>
-        <h2>🛡️ Defending</h2>
-        <DamageRow label={"Double damage from"} types={damageModifiers.def_double} />
-        <DamageRow label={"Half damage from"} types={damageModifiers.def_half} />
-        <DamageRow label={"No damage from"} types={damageModifiers.def_null} />
-      </div>
-    </div>
+    </>
   )
 }
 
 function App() {
+  const [targetType, setTargetType] = useState();
   return (
     <div>
       <h1>Pokemon Type Effectiveness</h1>
       <p>Click a type to see its attack & defense modfiers against other types.</p>
-      <TypeSelector />
-      <TypeInfo targetType="normal" />
-
+      <TypeSelector onTargetTypeChange={setTargetType} />
+      <div style={{ marginTop: '1rem' }}>
+        <TypeInfo targetType={targetType} />
+      </div>
     </div>
   )
 }
