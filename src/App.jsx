@@ -13,8 +13,6 @@ import './styles.css'
  */
 const TYPEDATA = {
   "normal": {
-    "name": "Normal",
-    "color": "#A8A878",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -37,8 +35,6 @@ const TYPEDATA = {
     }
   },
   "fire": {
-    "name": "Fire",
-    "color": "#F08030",
     "effectiveness": {
       "normal": 1,
       "fire": 0.5,
@@ -61,8 +57,6 @@ const TYPEDATA = {
     }
   },
   "water": {
-    "name": "Water",
-    "color": "#6890F0",
     "effectiveness": {
       "normal": 1,
       "fire": 2,
@@ -85,8 +79,6 @@ const TYPEDATA = {
     }
   },
   "electric": {
-    "name": "Electric",
-    "color": "#F8D030",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -109,8 +101,6 @@ const TYPEDATA = {
     }
   },
   "grass": {
-    "name": "Grass",
-    "color": "#78C850",
     "effectiveness": {
       "normal": 1,
       "fire": 0.5,
@@ -133,8 +123,6 @@ const TYPEDATA = {
     }
   },
   "ice": {
-    "name": "Ice",
-    "color": "#98D8D8",
     "effectiveness": {
       "normal": 1,
       "fire": 0.5,
@@ -157,8 +145,6 @@ const TYPEDATA = {
     }
   },
   "fighting": {
-    "name": "Fighting",
-    "color": "#C03028",
     "effectiveness": {
       "normal": 2,
       "fire": 1,
@@ -181,8 +167,6 @@ const TYPEDATA = {
     }
   },
   "poison": {
-    "name": "Poison",
-    "color": "#A040A0",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -205,8 +189,6 @@ const TYPEDATA = {
     }
   },
   "ground": {
-    "name": "Ground",
-    "color": "#E0C068",
     "effectiveness": {
       "normal": 1,
       "fire": 2,
@@ -229,8 +211,6 @@ const TYPEDATA = {
     }
   },
   "flying": {
-    "name": "Flying",
-    "color": "#A890F0",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -253,8 +233,6 @@ const TYPEDATA = {
     }
   },
   "psychic": {
-    "name": "Psychic",
-    "color": "#F85888",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -277,8 +255,6 @@ const TYPEDATA = {
     }
   },
   "bug": {
-    "name": "Bug",
-    "color": "#A8B820",
     "effectiveness": {
       "normal": 1,
       "fire": 0.5,
@@ -301,8 +277,6 @@ const TYPEDATA = {
     }
   },
   "rock": {
-    "name": "Rock",
-    "color": "#B8A038",
     "effectiveness": {
       "normal": 1,
       "fire": 2,
@@ -325,8 +299,6 @@ const TYPEDATA = {
     }
   },
   "ghost": {
-    "name": "Ghost",
-    "color": "#705898",
     "effectiveness": {
       "normal": 0,
       "fire": 1,
@@ -349,8 +321,6 @@ const TYPEDATA = {
     }
   },
   "dragon": {
-    "name": "Dragon",
-    "color": "#7038F8",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -373,8 +343,6 @@ const TYPEDATA = {
     }
   },
   "dark": {
-    "name": "Dark",
-    "color": "#705848",
     "effectiveness": {
       "normal": 1,
       "fire": 1,
@@ -397,8 +365,6 @@ const TYPEDATA = {
     }
   },
   "steel": {
-    "name": "Steel",
-    "color": "#B8B8D0",
     "effectiveness": {
       "normal": 1,
       "fire": 0.5,
@@ -421,8 +387,6 @@ const TYPEDATA = {
     }
   },
   "fairy": {
-    "name": "Fairy",
-    "color": "#EE99AC",
     "effectiveness": {
       "normal": 1,
       "fire": 0.5,
