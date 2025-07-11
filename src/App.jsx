@@ -421,13 +421,7 @@ function TypeTag({ name }) {
 
 function DamageRow({ types, label }) {
   if (types.length === 0) {
-    return (
-      <div className="damage-row">
-        <p className="damage-row-empty">
-          {label}: None
-        </p>
-      </div>
-    )
+    return;
   }
 
   return (

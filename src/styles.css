@@ -114,13 +114,6 @@
     margin-bottom: 1rem;
 }
 
-.damage-row-empty {
-    color: #666;
-    font-style: italic;
-    margin: 0.5rem 0;
-    font-size: 14px;
-}
-
 .damage-row-label {
     font-weight: 600;
     margin: 0.5rem 0;
