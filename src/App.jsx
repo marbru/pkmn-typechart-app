@@ -410,6 +410,10 @@ const TYPEDATA = {
   }
 };
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function TypeButton({ type, onClick }) {
   return (
     <button
@@ -421,7 +425,7 @@ function TypeButton({ type, onClick }) {
         src={`/assets/types/${type}.svg`}
         alt={type}
       />
-      {type.charAt(0).toUpperCase() + type.slice(1)}
+      {capitalize(type)}
     </button>
   )
 }
@@ -446,7 +450,7 @@ function TypeTag({ name }) {
         src={`/assets/types/${name}.svg`}
         alt={name}
       />
-      {name.charAt(0).toUpperCase() + name.slice(1)}
+      {capitalize(name)}
     </div>
   )
 }
@@ -482,7 +486,7 @@ function BigTypeBadge({ type }) {
         alt={type}
       />
       <h2>
-        {type.charAt(0).toUpperCase() + type.slice(1)} Type
+        {capitalize(type)} Type
       </h2>
     </div>
   )
