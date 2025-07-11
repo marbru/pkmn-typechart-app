@@ -450,7 +450,7 @@ function TypeButton({ type, onClick }) {
   return (
     <button
       key={type}
-      className="type-button"
+      className={`type-button type-${type}`}
       onClick={() => onClick(type)}
     >
       <img
