@@ -1,0 +1,268 @@
+/* App Container */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.app-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.app-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Type Selector Container */
+.type-selector-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+/* Type Button */
+.type-button {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.type-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.type-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Type Tag */
+.type-tag {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.25rem;
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.type-tag img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+/* Big Type Badge */
+.big-type-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.big-type-badge img {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 1rem 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.big-type-badge h2 {
+    margin: 0;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Damage Row */
+.damage-row {
+    margin-bottom: 1rem;
+}
+
+.damage-row-empty {
+    color: #666;
+    font-style: italic;
+    margin: 0.5rem 0;
+    font-size: 14px;
+}
+
+.damage-row-label {
+    font-weight: 600;
+    margin: 0.5rem 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.damage-row-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+/* Type Info Container */
+.type-info-container {
+    display: flex;
+    gap: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+.type-info-section {
+    flex: 1;
+}
+
+.type-info-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid;
+    padding-bottom: 0.5rem;
+}
+
+.type-info-section.attacking h2 {
+    color: #dc3545;
+    border-bottom-color: #dc3545;
+}
+
+.type-info-section.defending h2 {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+/* Empty State */
+.empty-state {
+    margin-top: 3rem;
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    border: 2px dashed #dee2e6;
+}
+
+.empty-state p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Type-specific background colors */
+.type-normal {
+    background-color: #A8A878;
+}
+
+.type-fire {
+    background-color: #F08030;
+}
+
+.type-water {
+    background-color: #6890F0;
+}
+
+.type-electric {
+    background-color: #F8D030;
+}
+
+.type-grass {
+    background-color: #78C850;
+}
+
+.type-ice {
+    background-color: #98D8D8;
+}
+
+.type-fighting {
+    background-color: #C03028;
+}
+
+.type-poison {
+    background-color: #A040A0;
+}
+
+.type-ground {
+    background-color: #E0C068;
+}
+
+.type-flying {
+    background-color: #A890F0;
+}
+
+.type-psychic {
+    background-color: #F85888;
+}
+
+.type-bug {
+    background-color: #A8B820;
+}
+
+.type-rock {
+    background-color: #B8A038;
+}
+
+.type-ghost {
+    background-color: #705898;
+}
+
+.type-dragon {
+    background-color: #7038F8;
+}
+
+.type-dark {
+    background-color: #705848;
+}
+
+.type-steel {
+    background-color: #B8B8D0;
+}
+
+.type-fairy {
+    background-color: #EE99AC;
+}

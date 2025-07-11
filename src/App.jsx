@@ -450,15 +450,14 @@ function TypeButton({ type, onClick }) {
   return (
     <button
       key={type}
-      style={{ display: "inline-flex", alignItems: 'center', margin: '0.25rem' }}
+      className="type-button"
       onClick={() => onClick(type)}
     >
       <img
         src={`/assets/types/${type}.svg`}
         alt={type}
-        style={{ width: 24, height: 24, marginRight: 8 }}
       />
-      {type}
+      {type.charAt(0).toUpperCase() + type.slice(1)}
     </button>
   )
 }
@@ -478,44 +477,49 @@ function TypeSelector({ onTargetTypeChange }) {
 
 function TypeTag({ name }) {
   return (
-    <div
-      style={{
-        display: "inline-flex",
-        alignItems: 'center',
-        margin: '0.25rem',
-        backgroundColor: TYPEDATA[name]?.color || "#eee",
-        borderRadius: "12px",
-        padding: "0.25rem 0.75rem",
-      }}
-    >
+    <div className={`type-tag type-${name}`}>
       <img
         src={`/assets/types/${name}.svg`}
         alt={name}
-        style={{ width: 24, height: 24, marginRight: 8 }}
       />
-      {name}
+      {name.charAt(0).toUpperCase() + name.slice(1)}
     </div>
   )
 }
 
 function DamageRow({ types, label }) {
+  if (types.length === 0) {
+    return (
+      <div className="damage-row">
+        <p className="damage-row-empty">
+          {label}: None
+        </p>
+      </div>
+    )
+  }
+
   return (
-    <>
-      <p>{label}: </p>
-      {types.map((type) => <TypeTag key={type} name={type} />)}
-    </>
+    <div className="damage-row">
+      <p className="damage-row-label">
+        {label}:
+      </p>
+      <div className="damage-row-types">
+        {types.map((type) => <TypeTag key={type} name={type} />)}
+      </div>
+    </div>
   )
 }
 
 function BigTypeBadge({ type }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+    <div className={`big-type-badge type-${type}`}>
       <img
         src={`/assets/types/${type}.svg`}
         alt={type}
-        style={{ width: 100, height: 100, margin: 8 }}
       />
-      <h2>{type.charAt(0).toUpperCase() + type.slice(1)} Type</h2>
+      <h2>
+        {type.charAt(0).toUpperCase() + type.slice(1)} Type
+      </h2>
     </div>
   )
 }
@@ -561,7 +565,11 @@ function calculateDamageModifiers(targetType) {
 
 function TypeInfo({ targetType }) {
   if (!targetType) {
-    return null;
+    return (
+      <div className="empty-state">
+        <p>Click a type to see its attack & defense modifiers against other types.</p>
+      </div>
+    );
   }
 
   const damageModifiers = calculateDamageModifiers(targetType);
@@ -569,15 +577,14 @@ function TypeInfo({ targetType }) {
   return (
     <>
       <BigTypeBadge type={targetType} />
-      <div style={{ display: 'flex', gap: '2rem' }}>
-        <div>
+      <div className="type-info-container">
+        <div className="type-info-section attacking">
           <h2>⚔️ Attacking</h2>
           <DamageRow label={"Double damage against"} types={damageModifiers.att_double} />
           <DamageRow label={"Half damage against"} types={damageModifiers.att_half} />
           <DamageRow label={"No damage against"} types={damageModifiers.att_null} />
-
         </div>
-        <div>
+        <div className="type-info-section defending">
           <h2>🛡️ Defending</h2>
           <DamageRow label={"Double damage from"} types={damageModifiers.def_double} />
           <DamageRow label={"Half damage from"} types={damageModifiers.def_half} />
@@ -591,13 +598,21 @@ function TypeInfo({ targetType }) {
 function App() {
   const [targetType, setTargetType] = useState();
   return (
-    <div>
-      <h1>Pokemon Type Effectiveness</h1>
-      <p>Click a type to see its attack & defense modfiers against other types.</p>
-      <TypeSelector onTargetTypeChange={setTargetType} />
-      <div style={{ marginTop: '1rem' }}>
-        <TypeInfo targetType={targetType} />
+    <div className="app-container">
+      <div className="header-section">
+        <h1 className="app-title">
+          Pokémon Type Effectiveness Tool
+        </h1>
+        {/* <p className="app-description">
+          It's super effective!
+        </p> */}
       </div>
+
+      <div className="type-selector-container">
+        <TypeSelector onTargetTypeChange={setTargetType} />
+      </div>
+
+      <TypeInfo targetType={targetType} />
     </div>
   )
 }
