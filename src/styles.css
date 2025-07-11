@@ -19,7 +19,7 @@
 }
 
 .app-title {
-    margin: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
     font-size: 2.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -28,26 +28,11 @@
     background-clip: text;
 }
 
-.app-description {
-    font-size: 1.1rem;
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Type Selector Container */
-.type-selector-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    margin-bottom: 2rem;
-}
-
 /* Type Button */
 .type-button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     margin: 0.5rem;
     padding: 0.75rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -59,6 +44,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 14px;
     font-weight: 600;
+    width: 120px;
 }
 
 .type-button:hover {
@@ -70,6 +56,7 @@
     width: 24px;
     height: 24px;
     margin-right: 8px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
 }
 
 /* Type Tag */
@@ -91,6 +78,7 @@
     width: 20px;
     height: 20px;
     margin-right: 6px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
 }
 
 /* Big Type Badge */

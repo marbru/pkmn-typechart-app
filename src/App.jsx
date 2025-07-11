@@ -499,7 +499,7 @@ function TypeInfo({ targetType }) {
   if (!targetType) {
     return (
       <div className="empty-state">
-        <p>Click a type to see its attack & defense modifiers against other types.</p>
+        <p>Click a type to see its attack & defense modifiers against other types</p>
       </div>
     );
   }
@@ -535,12 +535,6 @@ function App() {
         <h1 className="app-title">
           Pokémon Type Effectiveness Tool
         </h1>
-        {/* <p className="app-description">
-          It's super effective!
-        </p> */}
-      </div>
-
-      <div className="type-selector-container">
         <TypeSelector onTargetTypeChange={setTargetType} />
       </div>
 
