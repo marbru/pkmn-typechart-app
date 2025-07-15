@@ -14,7 +14,7 @@ function TypeButton({ type, onClick }) {
       onClick={() => onClick(type)}
     >
       <img
-        src={`assets/types/${type}.svg`}
+        src={`typeicons/${type}.svg`}
         alt={type}
       />
       {capitalize(type)}
@@ -37,7 +37,7 @@ function TypeTag({ name }) {
   return (
     <div className={`type-tag type-${name}`}>
       <img
-        src={`assets/types/${name}.svg`}
+        src={`typeicons/${name}.svg`}
         alt={name}
       />
       {capitalize(name)}
@@ -66,7 +66,7 @@ function BigTypeBadge({ type }) {
   return (
     <div className={`big-type-badge type-${type}`}>
       <img
-        src={`assets/types/${type}.svg`}
+        src={`typeicons/${type}.svg`}
         alt={type}
       />
       <h2>
