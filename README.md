@@ -1,10 +1,10 @@
-Just an interactive, easy to read pokemon type effectiveness chart. No more checking bloated tables!
+An interactive, easy to read pokemon type effectiveness chart, with responsive design. Built with React and Vite.
 
 Try the live version: https://marbru.github.io/pkmn-typechart-app/
 
-Uses react, vite, and responsive design.
+<img src="public/screenshot.png" alt="Screenshot" style="max-width: 500px; display: block; margin: 0 auto;" />
 
-## usage
+## Installation
 
 Requires node (built with v22LTS). Install with [nvm](https://github.com/nvm-sh/nvm)
 
@@ -13,10 +13,12 @@ Then install deps:
 npm install
 ```
 
-Utility scripts you can find in the [package.json](package.json):
+## Usage
+
+Utility scripts that live in the [package.json](package.json):
 
 
-Run locally with live reloading:
+Run locally with live reloading (for development):
 ```
 npm run dev
 ```
