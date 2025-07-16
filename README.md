@@ -2,7 +2,7 @@ An interactive, easy to read pokemon type effectiveness chart, with responsive d
 
 Try the live version: https://marbru.github.io/pkmn-typechart-app/
 
-<img src="public/screenshot.png" alt="Screenshot" style="max-width: 300px; display: block; margin: 0 auto;" />
+![Screenshot](public/screenshot.png)
 
 ## Installation
 
