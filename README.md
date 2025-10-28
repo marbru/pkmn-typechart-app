@@ -4,6 +4,8 @@ Try the live version: https://marbru.github.io/pkmn-typechart-app/
 
 ![Screenshot](public/screenshot.png)
 
+Note: this app was created a learning project for React and Cursor. It has been semi vibe-coded, and it likely shows (specially on the UI side).
+
 ## Installation
 
 Requires node (built with v22LTS). Install with [nvm](https://github.com/nvm-sh/nvm)
